@@ -63,9 +63,6 @@ class Personal extends React.Component{
                         <input type="submit" value="next"/>
                     </div>
                 </form>
-                <h2>{this.state.name}</h2>
-                <h2>{this.state.email}</h2>
-                <h2>{this.state.bday}</h2>
             </div>
         );
     }
