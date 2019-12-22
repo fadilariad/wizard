@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import {Switch} from 'react-router-dom'
 
@@ -15,7 +16,10 @@ function App() {
             <Route exact path="/wizard-summary" component={}/>
           </Switch>
         </React.Fragment>
-      </Router>
+      </Router
+    <div>
+
+    </div>
   );
 }
 
