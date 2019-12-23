@@ -47,7 +47,7 @@ class Summary extends React.Component {
                             </h2>
 
                             <h2 className={"title"}>Hobbies:</h2>
-                            {localStorage.hobbies &&  JSON.parse(localStorage.getItem("hobbies")).map((data,i) => {
+                            {JSON.parse(localStorage.hobbies).length > 0  &&  JSON.parse(localStorage.getItem("hobbies")).map((data,i) => {
                                 return <h2 key={i} className={'title'}>{data}</h2>
                             })}
                         </div>
