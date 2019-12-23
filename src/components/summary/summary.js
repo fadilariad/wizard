@@ -1,6 +1,6 @@
 import React from "react";
 import {withRouter} from 'react-router-dom'
-
+import Api from "../../api/api";
 class Summary extends React.Component {
     constructor(props) {
         super(props);
@@ -11,8 +11,7 @@ class Summary extends React.Component {
         }
     }
     componentDidMount() {
-        const {name, email, bday, street, homeNumber, city, image} = localStorage;
-        if (!city || !street || !homeNumber || !image || !bday || !email || !name) {
+        if (!Api.isCompletePageProfile()) {
             this.prevPage();
         }
     };
@@ -41,13 +40,13 @@ class Summary extends React.Component {
 
                         </div>
                         <div className={"details-wrapper"}>
-                            <h1>{localStorage.getItem("name")}</h1>
-                            <h2><span className={"field"}>Email:  </span>{localStorage.getItem("email")}</h2>
-                            <h2><span className={"field"}>Date of Birth:  </span>{localStorage.getItem("bday")}</h2>
+                            <h1>{Api.getItem("name")}</h1>
+                            <h2><span className={"field"}>Email:  </span>{Api.getItem("email")}</h2>
+                            <h2><span className={"field"}>Date of Birth:  </span>{Api.getItem("bday")}</h2>
 
                             <h2><span className={"field"}>Address:  </span>
-                                {localStorage.getItem("street")}{" "}
-                                {localStorage.getItem("homeNumber")}, {localStorage.getItem("city")}
+                                {Api.getItem("street")}{" "}
+                                {Api.getItem("homeNumber")}, {Api.getItem("city")}
                             </h2>
 
                             <div className={"hobbies-wrapper"}>

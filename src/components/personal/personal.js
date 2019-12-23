@@ -1,14 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import Api from "../../api/api";
 
 class Personal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       pages: { next: "wizard-address" },
-      name: localStorage.name ? localStorage.name : "",
-      email: localStorage.email ? localStorage.email : "",
-      bday: localStorage.bday ? localStorage.bday : ""
+      name: Api.getItem('name') ? Api.getItem('name') : "",
+      email: Api.getItem('email') ? Api.getItem('email') : "",
+      bday: Api.getItem('bday') ? Api.getItem('bday') : ""
     };
   }
 
@@ -22,9 +23,9 @@ class Personal extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, email, bday } = this.state;
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("bday", bday);
+    Api.setItem("name", name);
+    Api.setItem("email", email);
+    Api.setItem("bday", bday);
     const { history } = this.props;
     const location = this.state.pages.next;
     history.push(location);

@@ -1,6 +1,6 @@
 import React from "react";
 import {withRouter} from 'react-router-dom';
-
+import Api from "../../api/api";
 
 class Profile extends React.Component{
     constructor(props) {
@@ -10,14 +10,13 @@ class Profile extends React.Component{
                 prev:'wizard-address',
                 next:'wizard-summary'
             },
-            hobbies:localStorage.hobbies ? JSON.parse(localStorage.getItem('hobbies')) : '',
-            image:localStorage.image ? localStorage.image : ''
+            hobbies:Api.getItem('hobbies') ? JSON.parse(Api.getItem('hobbies')) : '',
+            image:Api.getItem('image') ? Api.getItem('image') : ''
         };
         this.selectedCheckboxes = new Set();
     }
     componentDidMount() {
-        const {city, street, homeNumber, name, email, bday} = localStorage;
-        if (!city || !street || !homeNumber || !name || !email || !bday) {
+        if (!Api.isCompletePageAdress()) {
             this.prevPage();
         }
     }
@@ -27,8 +26,8 @@ class Profile extends React.Component{
         const {hobbies,image} = this.state;
         const {history} = this.props;
         const location = this.state.pages.next;
-        localStorage.setItem('hobbies',JSON.stringify(hobbies));
-        localStorage.setItem('image',image);
+        Api.setItem('hobbies',JSON.stringify(hobbies));
+        Api.setItem('image',image);
         history.push(location);
 
     };

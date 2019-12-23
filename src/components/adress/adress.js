@@ -7,7 +7,7 @@
 
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom'
-
+import Api from "../../api/api";
 class AddressDetails extends Component {
     constructor(props) {
         super(props);
@@ -16,15 +16,14 @@ class AddressDetails extends Component {
                 prev: 'wizard-personal',
                 next:'wizard-profile'
             },
-            city: localStorage.city ? localStorage.city : '',
-            street: localStorage.street ? localStorage.street : '',
-            homeNumber: localStorage.homeNumber ? localStorage.homeNumber : '',
+            city: Api.getItem('city') ? Api.getItem('city') : '',
+            street: Api.getItem('street') ? Api.getItem('street') : '',
+            homeNumber: Api.getItem('homeNumber') ? Api.getItem('homeNumber') : '',
         };
     }
 
     componentDidMount() {
-        const {name, email, bday} = localStorage;
-        if (!name || !email || !bday) {
+        if (!Api.isCompletePagePersonal()) {
             this.prevPage();
         }
     }
@@ -40,9 +39,9 @@ class AddressDetails extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const {city, street, homeNumber} = this.state;
-        localStorage.setItem("city", city);
-        localStorage.setItem("street",street);
-        localStorage.setItem("homeNumber", homeNumber);
+        Api.setItem("city", city);
+        Api.setItem("street",street);
+        Api.setItem("homeNumber", homeNumber);
         const {history} = this.props;
         const location = this.state.pages.next;
         history.push(location);
