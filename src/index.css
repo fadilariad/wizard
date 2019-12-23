@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-.body, .img-wrapper, .details-wrapper{
+.body, .img-wrapper, .details-wrapper, .hobbies-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +36,11 @@ h2, h1, .input-wrapper{
 h2, .radio-option{
   font-family: 'Mukta', sans-serif;
   color: white;
+}
+
+.field{
+  font-family: 'Mukta', sans-serif;
+  color: #F7DC4F;
 }
 
 h1{
@@ -127,4 +132,8 @@ input{
 .header {
     display:flex;
     justify-content:space-between;
+}
+
+.space{
+  padding: 0 5px;
 }

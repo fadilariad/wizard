@@ -42,18 +42,20 @@ class Summary extends React.Component {
                         </div>
                         <div className={"details-wrapper"}>
                             <h1>{localStorage.getItem("name")}</h1>
-                            <h2>{localStorage.getItem("email")}</h2>
-                            <h2>{localStorage.getItem("bday")}</h2>
+                            <h2><span className={"field"}>Email:  </span>{localStorage.getItem("email")}</h2>
+                            <h2><span className={"field"}>Date of Birth:  </span>{localStorage.getItem("bday")}</h2>
 
-                            <h2>
+                            <h2><span className={"field"}>Address:  </span>
                                 {localStorage.getItem("street")}{" "}
                                 {localStorage.getItem("homeNumber")}, {localStorage.getItem("city")}
                             </h2>
 
-                            <h2 className={"title"}>Hobbies:</h2>
+                            <div className={"hobbies-wrapper"}>
+                            <h2><span className={"field"}>Hobbies:  </span></h2>
                             {JSON.parse(localStorage.hobbies).length > 0  &&  JSON.parse(localStorage.getItem("hobbies")).map((data,i) => {
-                                return <h2 key={i} className={'title'}>{data}</h2>
+                                return <h2 key={i} className={'title space'}>{data}</h2>
                             })}
+                            </div>
                         </div>
                     </div>
                 </div>
