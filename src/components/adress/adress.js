@@ -6,20 +6,27 @@
 
 
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom'
 
 class AddressDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            prev: 'personal',
-            next:'image',
-            city: '',
-            street: '',
-            home_number: ''
+            pages:{
+                prev: 'wizard-personal',
+                next:'wizard-profile'
+            },
+            city: localStorage.city ? localStorage.city : '',
+            street: localStorage.street ? localStorage.street : '',
+            homeNumber: localStorage.homeNumber ? localStorage.homeNumber : '',
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
+        const {name, email, bday} = localStorage;
+        if (!name || !email || !bday) {
+            this.prevPage();
+        }
     }
 
 
@@ -32,14 +39,23 @@ class AddressDetails extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        localStorage.setItem("city", this.state.city)
-        localStorage.setItem("street", this.state.street)
-        localStorage.setItem("home_number", this.state.home_number)
+        const {city, street, homeNumber} = this.state;
+        localStorage.setItem("city", city);
+        localStorage.setItem("street",street);
+        localStorage.setItem("homeNumber", homeNumber);
+        const {history} = this.props;
+        const location = this.state.pages.next;
+        history.push(location);
+    };
+    prevPage =() => {
+      const {history} = this.props;
+      const location = this.state.pages.prev;
+      history.push(location);
     };
 
 
     render() {
-        const {city, street, home_number} = this.state;
+        const {city, street, homeNumber} = this.state;
         return (
             <div className = "page">
                 <h1 className = "title">Address details:</h1>
@@ -56,12 +72,12 @@ class AddressDetails extends Component {
 
                 <div className = "input-wrapper">
                     <h2>Home number: </h2>
-                    <input className ="input" type="number" min="1" name="home_number"  value={home_number} onChange={this.handleChange}/>
+                    <input className ="input" type="number" min="1" name="homeNumber"  value={homeNumber} onChange={this.handleChange}/>
                 </div>
 
                 <div className="buttons">
-                    <button type="submit" className="btn prev" onClick= {this.handleSubmit}>prev</button>
-                    <button type="submit" className="btn next" onClick= {this.handleSubmit}>next</button>
+                    <button  className="btn prev" onClick= {this.prevPage}>prev</button>
+                    <button  className="btn next" onClick= {this.handleSubmit}>next</button>
                 </div>
 
             </div>
@@ -69,4 +85,4 @@ class AddressDetails extends Component {
     }
 }
 
-export default AddressDetails;
+export default withRouter(AddressDetails);

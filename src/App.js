@@ -3,21 +3,22 @@ import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import {Switch} from 'react-router-dom'
 import Personal from "./components/personal/personal";
-
+import AddressDetails from "./components/adress/adress";
+import Profile from "./components/profile/profile";
+import Summary from "./components/summary/summary";
 
 
 function App() {
   return (
       <Router>
-          <Personal/>
-        {/*<React.Fragment>*/}
-        {/*  <Switch>*/}
-        {/*    <Route exact path="wizard-personal" component={Personal}/>*/}
-        {/*    <Route exact path="/wizard-address" component={}/>*/}
-        {/*    <Route exact path="/wizard-profile" component={}/>*/}
-        {/*    <Route exact path="/wizard-summary" component={}/>*/}
-        {/*  </Switch>*/}
-        {/*</React.Fragment>*/}
+        <React.Fragment>
+          <Switch>
+            <Route  path="/wizard-personal" component={Personal}/>
+            <Route  path="/wizard-address" component={AddressDetails}/>
+            <Route  path="/wizard-profile" component={Profile}/>
+            <Route  path="/wizard-summary" component={Summary}/>
+          </Switch>
+        </React.Fragment>
       </Router>
   );
 }
