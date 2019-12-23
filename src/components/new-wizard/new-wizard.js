@@ -10,7 +10,7 @@ class StartWizard extends React.Component{
     render() {
         return (
             <div className={'page'}>
-                <button onClick={this.startWizard}>start</button>
+                <button className={"start"} onClick={this.startWizard}>start</button>
             </div>
         );
     }

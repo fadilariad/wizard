@@ -19,6 +19,8 @@ code {
   align-items: center;
 }
 
+
+
 .page{
   margin: 40px 0px 0px;
 }
@@ -31,7 +33,7 @@ h2, h1, .input-wrapper{
   margin: 10px 0px;
 }
 
-h2{
+h2, .radio-option{
   font-family: 'Mukta', sans-serif;
   color: white;
 }
@@ -75,7 +77,23 @@ h1{
   font-size: 25px;
   outline-style: hidden;
   cursor:pointer;
+}
 
+.start{
+  background-color: #F7DC4F;
+	border: 1px solid #F7DC4F;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	padding: 6px 14px;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  outline-style: hidden;
+  cursor:pointer;
+  margin: 0px auto;
 }
 
 button:focus {outline:0;}
@@ -90,7 +108,17 @@ input{
   background-color: #F7DC4F;
   border: 1px solid #F7DC4F;
   height: 30px;
-  width: 200%;
+  width: 100%;
   border-radius: 8px;
   font-size: 16px;
+}
+
+.radio-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio-option{
+  font-size: 18px;
 }

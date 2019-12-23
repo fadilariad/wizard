@@ -63,13 +63,13 @@ class Profile extends React.Component{
                     <h2>Profile Image URL: </h2>
                     <input type={"text"} name={'url'}  onChange={this.handleChange} value={image}  required />
                 </div>
-                <div className = "input-wrapper">
+                <div className = "radio-wrapper">
                     <h2>Hobbies: </h2>
-                    <input onChange={this.toggleCheckbox}  type="checkbox" name="hobbies" value="chess" checked={hobbies.includes('chess')}/>chess <br/>
-                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="movies" checked={hobbies.includes('movies')}/> Movies <br/>
-                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="sport" checked={hobbies.includes('sport')}/>sports <br/>
-                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="cars" checked={hobbies.includes('cars')}/>cars <br/>
-                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="dolls" checked={hobbies.includes('dolls')}/> dolls <br/>
+                    <input onChange={this.toggleCheckbox}  type="checkbox" name="hobbies" value="chess" checked={hobbies.includes('chess')}/><h2 className={"radio-option"}>chess</h2> <br/>
+                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="movies" checked={hobbies.includes('movies')}/> <h2 className={"radio-option"}>Movies</h2> <br/>
+                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="sport" checked={hobbies.includes('sport')}/><h2 className={"radio-option"}>sports</h2> <br/>
+                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="cars" checked={hobbies.includes('cars')}/><h2 className={"radio-option"}>cars</h2> <br/>
+                    <input onChange={this.toggleCheckbox} type="checkbox" name="hobbies" value="dolls" checked={hobbies.includes('dolls')}/> <h2 className={"radio-option"}>dolls</h2> <br/>
                 </div>
 
                 <div className="buttons">

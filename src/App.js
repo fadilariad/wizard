@@ -11,6 +11,7 @@ import StartWizard from "./components/new-wizard/new-wizard";
 
 function App() {
   return (
+    <div className={"body"}>
       <Router>
         <React.Fragment>
           <Switch>
@@ -22,6 +23,7 @@ function App() {
           </Switch>
         </React.Fragment>
       </Router>
+      </div>
   );
 }
 
