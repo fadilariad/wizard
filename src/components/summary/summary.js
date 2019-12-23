@@ -27,6 +27,10 @@ class Summary extends React.Component {
         return (
             <div>
                 <div className={"page"}>
+                    <div className={'header'}>
+                        <h1 className = "title">Summary:</h1>
+                        <h1 className={"title"}>4/4</h1>
+                    </div>
                     <div className={"img-wrapper"}>
                         <div
                             className={"img"}

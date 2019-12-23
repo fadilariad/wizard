@@ -58,21 +58,24 @@ class AddressDetails extends Component {
         const {city, street, homeNumber} = this.state;
         return (
             <div className = "page">
-                <h1 className = "title">Address details:</h1>
+                <div className={'header'}>
+                    <h1 className = "title">Address details:</h1>
+                    <h1 className={"title"}>2/4</h1>
+                </div>
 
                 <div className = "input-wrapper">
                     <h2>City: </h2>
-                    <input className ="input" type="text" name="city" value={city} onChange={this.handleChange}/>
+                    <input className ="input" type="text" name="city" value={city} onChange={this.handleChange} required/>
                 </div>
 
                 <div className = "input-wrapper">
                     <h2>Street: </h2>
-                    <input className ="input" type="text" name="street" value={street} onChange={this.handleChange}/>
+                    <input className ="input" type="text" name="street" value={street} onChange={this.handleChange} required/>
                 </div>
 
                 <div className = "input-wrapper">
                     <h2>Home number: </h2>
-                    <input className ="input" type="number" min="1" name="homeNumber"  value={homeNumber} onChange={this.handleChange}/>
+                    <input className ="input" type="number" min="1" name="homeNumber"  value={homeNumber} onChange={this.handleChange} required/>
                 </div>
 
                 <div className="buttons">

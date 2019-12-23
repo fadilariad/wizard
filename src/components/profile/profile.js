@@ -58,7 +58,10 @@ class Profile extends React.Component{
         const {hobbies,image} = this.state;
         return (
             <form className = "page">
-                <h1 className = "title">Profile details:</h1>
+                <div className={'header'}>
+                    <h1 className = "title">Profile details:</h1>
+                    <h1 className={"title"}>3/4</h1>
+                </div>
                 <div className = "input-wrapper">
                     <h2>Profile Image URL: </h2>
                     <input type={"text"} name={'url'}  onChange={this.handleChange} value={image}  required />

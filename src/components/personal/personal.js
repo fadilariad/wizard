@@ -36,7 +36,10 @@ class Personal extends React.Component {
     return (
       <div>
         <div className={"page"}>
-          <h1 className={"title"}>Please Sign In</h1>
+          <div className={'header'}>
+            <h1 className={"title"}>Please Sign In </h1>
+            <h1 className={"title"}>1/4</h1>
+          </div>
           <form className={"form"} onSubmit={this.handleSubmit}>
             <div className={"input-wrapper"}>
               <h2>First name:</h2>
@@ -70,9 +73,8 @@ class Personal extends React.Component {
                 required
               />
             </div>
-            <div className={"submit buttons"}>
-              <div></div>
-              <input className={"btn"} type="submit" value="next" />
+            <div className={'buttons'}>
+              <input style={{marginLeft:'auto'}} className={"btn"} type="submit" value="next" />
             </div>
           </form>
         </div>
