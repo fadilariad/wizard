@@ -57,7 +57,7 @@ class Profile extends React.Component{
     render() {
         const {hobbies,image} = this.state;
         return (
-            <form className = "page">
+            <form className = "page" onSubmit={this.handelSubmit}>
                 <div className={'header'}>
                     <h1 className = "title">Profile details:</h1>
                     <h1 className={"title"}>3/4</h1>
@@ -77,7 +77,8 @@ class Profile extends React.Component{
 
                 <div className="buttons">
                     <button type="submit" className="btn prev" onClick= {this.prevPage}>prev</button>
-                    <input type={'submit'} className="btn next" onClick= {this.handelSubmit} value={'next'}/>
+                    <div><small>field with * required</small></div>
+                    <input type={'submit'} className="btn next"  value={'next'}/>
                 </div>
 
             </form>

@@ -57,7 +57,7 @@ class AddressDetails extends Component {
     render() {
         const {city, street, homeNumber} = this.state;
         return (
-            <div className = "page">
+            <form className = "page" onSubmit={this.handleSubmit}>
                 <div className={'header'}>
                     <h1 className = "title">Address details:</h1>
                     <h1 className={"title"}>2/4</h1>
@@ -65,25 +65,27 @@ class AddressDetails extends Component {
 
                 <div className = "input-wrapper">
                     <h2>City: </h2>
-                    <input className ="input" type="text" name="city" value={city} onChange={this.handleChange} required/>
+                    <input  type="text" name="city" value={city} onChange={this.handleChange} required/>
                 </div>
 
                 <div className = "input-wrapper">
                     <h2>Street: </h2>
-                    <input className ="input" type="text" name="street" value={street} onChange={this.handleChange} required/>
+                    <input  type="text" name="street" value={street} onChange={this.handleChange} required/>
                 </div>
 
                 <div className = "input-wrapper">
                     <h2>Home number: </h2>
-                    <input className ="input" type="number" min="1" name="homeNumber"  value={homeNumber} onChange={this.handleChange} required/>
+                    <input type="number" min="1" name="homeNumber"  value={homeNumber} onChange={this.handleChange} required/>
                 </div>
 
                 <div className="buttons">
                     <button  className="btn prev" onClick= {this.prevPage}>prev</button>
-                    <button  className="btn next" onClick= {this.handleSubmit}>next</button>
+                    <div><small>field with * required</small></div>
+                    <input  className="btn next" type={'submit'} value={'next'} />
                 </div>
 
-            </div>
+
+            </form>
         );
     }
 }
