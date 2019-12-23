@@ -6,6 +6,7 @@ import Personal from "./components/personal/personal";
 import AddressDetails from "./components/adress/adress";
 import Profile from "./components/profile/profile";
 import Summary from "./components/summary/summary";
+import StartWizard from "./components/new-wizard/new-wizard";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route  path="/wizard-address" component={AddressDetails}/>
             <Route  path="/wizard-profile" component={Profile}/>
             <Route  path="/wizard-summary" component={Summary}/>
+            <Route  path="/" component={StartWizard}/>
           </Switch>
         </React.Fragment>
       </Router>
