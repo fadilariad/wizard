@@ -51,7 +51,7 @@ class Summary extends React.Component {
 
                             <div className={"hobbies-wrapper"}>
                             <h2><span className={"field"}>Hobbies:  </span></h2>
-                            {JSON.parse(localStorage.hobbies).length > 0  &&  JSON.parse(localStorage.getItem("hobbies")).map((data,i) => {
+                            {JSON.parse(Api.getItem('hobbies')).length > 0  &&  JSON.parse(Api.getItem("hobbies")).map((data,i) => {
                                 return <h2 key={i} className={'title space'}>{data}</h2>
                             })}
                             </div>
