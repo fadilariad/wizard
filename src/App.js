@@ -21,6 +21,7 @@ function App() {
             <Route  path="/wizard-summary" component={Summary}/>
             <Route  path="/" component={StartWizard}/>
           </Switch>
+
         </React.Fragment>
       </Router>
       </div>
